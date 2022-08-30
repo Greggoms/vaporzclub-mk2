@@ -2,8 +2,8 @@ import React from "react"
 import { Helmet, HelmetProvider } from "react-helmet-async"
 // import Header from "./Header"
 // import Footer from "./Footer"
+// import Nav from "./Nav"
 import { LayoutContainer, MainContainer } from "../css"
-import Nav from "./Nav"
 
 const Layout = ({ children }) => {
   return (
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
             href="https://fonts.googleapis.com/css?family=Raleway:200,400,700&display=swap"
           />
         </Helmet>
-        <Nav />
+        {/* <Nav /> */}
         {/* <Header /> */}
         <div className="content">
           <MainContainer>{children}</MainContainer>

@@ -1,3 +1,4 @@
+export * from "./contactPageStyles"
 export * from "./headerStyles"
 export * from "./heroStyles"
 export * from "./layoutStyles"

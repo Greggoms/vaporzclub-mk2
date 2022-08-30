@@ -4,6 +4,11 @@ export const HeroContainer = styled.section`
   display: grid;
   grid-template-rows: 100vh;
 
+  .gatsby-image-wrapper {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   .content {
     z-index: 1;
     grid-column: 1;
@@ -12,11 +17,9 @@ export const HeroContainer = styled.section`
     display: grid;
     align-items: center;
     padding: 1rem;
-  }
 
-  .gatsby-image-wrapper {
-    grid-column: 1;
-    grid-row: 1;
+    max-width: 405px;
+    margin: 0 auto;
   }
 
   .quote {
@@ -29,7 +32,9 @@ export const HeroContainer = styled.section`
     color: ${props => props.theme.grayscale.light1};
     font-weight: 700;
     background: rgba(33, 33, 33, 0.4);
+
     p {
+      margin-bottom: 0.5rem;
     }
   }
 `
