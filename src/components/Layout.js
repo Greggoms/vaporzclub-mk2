@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
             href="https://fonts.googleapis.com/css?family=Raleway:200,400,700&display=swap"
           />
         </Helmet>
-        {/* <Nav /> */}
+        <Nav />
         {/* <Header /> */}
         <div className="content">
           <MainContainer>{children}</MainContainer>
