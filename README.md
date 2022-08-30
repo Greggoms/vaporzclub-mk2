@@ -1,105 +1,79 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+Fresh hello-world Gatsby build.
+https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Dev Notes
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+- Viewing the assets, I see that I'll need a homepage, a contact page, and a products page.
 
-## 🚀 Quick start
+- Starting to build the homepage. Using the Mobile layout.
+- I'll need a header - no navigation present, I may add one anyway. Or not to show a point ;).
+- Next is the Hero section.
+  - I'm glad there's a without-text bob picture option
+  - Hero image is 1.61 MB as a png. Reduced file size by over 1905% (down to 84.5 KB) by saving as a jpg. Will have to re-optimize all image assets. ugh.
+  - All pictures will have to be renamed as well. They can't have spaces.
+    - Juice Head - 5k - Watermelon Lime - PNG should be juicehead-5k-Watermelon_lime or juice_head-5k-Watermelon_lime-png
+  - Trim the pictures if they are a png!
+  - Don't worry about saving any svgs. Turns out I'm not using them. Also, I don't need images/svgs of any text.
+- Homepage is done. He gon' learn today!
 
-1.  **Create a Gatsby site.**
+- Starting on Products page
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/part-0/#gatsby-cli)) to create a new site, specifying the hello-world starter.
+  - The product pictures should be resized to all be the same height after being trimmed.
+    - If saving as a jpg, add a 100px-200px height padding. Make the width match. Square images!
+  - May need to rework the mobile layout.
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+- Starting on Contact page
 
-1.  **Start developing.**
+  - Photoshopped the vaporz club logo out of the background image.
+  - UX Tip: Contact pages should have a contact form (or some way to contact the business directly through the website).
+    - The lack of a fast and direct communication option may cost you some business.
+    - In general, the more you require the user to do, the less willing they are to do it.
+    - In this case, they can either click the email and have the OS native mail app open (that no one is signed into, involving even more steps), or they can copy the email, sign into their email provider, paste the email, and then type their message. Too many steps when it could all be handled by a contact form on the website instead.
 
-    Navigate into your new site’s directory and start it up.
+- Starting to add responsiveness
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+  - Had to remove all Mobile background images. Replaced them with the full-width Desktop variants.
+    - Optimized the Desktop images for huge file size savings.
+    - Only use png if the image needs a transparent background. Otherwise, the image should be a jpg - file size can be thousands of times bigger than it needs to be if it's a png. Bad UX.
+    - If your software only allows you to save images as png, RUN!
 
-1.  **Open the source code and start editing!**
+- Can't add fonts.
 
-    Your site is now running at `http://localhost:8000`!
+  - Don't know what they are. Adobe Acrobat gives me font names, but they are not the same when I look them up.
+  - Too many fonts.
+    - Arimo
+    - Lora
+    - Athiti Medium
+    - Alice - Don't use a font like this - first letter is one font, the rest of the word is a different one.
+      - Especially if this technique is used on only one title on a single page. Graphic design principle #736: Consistency - If you only do something once, either repeat it elsewhere or don't do it at all.
+  - In code, I have to load in every font and its variant (thin, medium, bold, etc..) used in the design. Websites should only use 2, MAYBE 3 fonts, with only 1-3 variants of each font.
+  - It's usually unnecessary to include every variant of a font. Some fonts can have 20+ variants. That's a looot of extra data being loaded in that's not even being used. Bad UX.
+  - If you want my life to be easier, find fonts here: [Google Fonts](https://fonts.google.com/)
+  - If you use fontsquirrel, daFont, or similar font sharing sites, I'll need the font file(s) used in the design. I'll need to include them into the website's file directory or else they won't be usable at all.
+    - I don't like this approach. I'd rather be able to load a font in using a <link> tag like this: `<link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">`
+    - The <link> tag above allows me to use a font from google without needing to download it and include it in the website directory.
+  - You should always assume that no one can access the fonts you use in your design.
+    - Each computer OS comes with a set of pre-downloaded fonts. The only way to get more is to download and install font files. Just because it's on your machine doesn't mean it's on everyones!
+    - If a font is not on a user's computer, the site will use a plain jane serif or sans-serif default.
+    - All of this can be prevented by loading a font from a server like Google's.
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries)._
-
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/products/cloud/)
-
-Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+- My issue with full-page background images
+  - Might look fine on mobile, but they turn into pixel soup on big screens.
+    - One way to prevent this is to keep the image at an unreasonably high resolution such as 4000x\_\_\_\_.
+      - This of course will result in a terribly big file size that isn't meant for web consumption.
+    - Another way is to use a smaller image that can be repeated without causing design clashes
+      - explanation - [W3 Schools](https://www.w3schools.com/cssref/pr_background-image.asp)
+      - example - [W3 Schools Try it Yourself Editor](https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_background_multiple)
+  - Nearly impossible to accomodate for overlapping text.
+    - I personally hate having to put text on a semi-transparent background box.
+    - This can be overcome by either:
+      - Using a very carefully chosen image that has an open area for text placement.
+      - Placing the text on a solid background and adding some flair to make up for the hidden imagery.
+      - Not using a background image.
+  - Images are not responsive by default. They have to be forced to match the width of the screen. The image's height will scale with the width.
+    - This can cause weirdness with any content placed on it.
+    - explanation - [W3 Schools](https://www.w3schools.com/howto/howto_css_image_responsive.asp)
+    - full screen width example - [W3 Schools Try it Yourself Editor](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_responsive)
+    - full image width example - [W3 Schools Try it Yourself Editor](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_responsive2)
+  - You are able to easily place content on an artboard layout, but the reality of the situation on the web is much different.
+    - Example, the home page - The cool ring that outlines Bob's picture works on mobile, but the full-page image needs to fit the full page, so the ring will start to expand (~1000px+) to a point that doesn't make sense anymore.
