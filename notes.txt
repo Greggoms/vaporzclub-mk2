@@ -1,0 +1,19 @@
+Fresh hello-world Gatsby build.
+https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
+
+Dev Notes
+• Viewing the assets, I see that I'll need a homepage, a contact page, and a products page.
+• Starting to build the homepage. Using the Mobile layout.
+• I'll need a header - no navigation present, I may add one anyway. Or not to show a point ;).
+• Next is the Hero section.
+    • I'm glad there's a without-text bob picture option
+    • Hero image is 1.61 MB as a png. Reduced size by over 267% (down to 60.2 KB) by saving as a medium quality jpg. Will have to re-optimize all image assets. ugh.
+    • All pictures will have to be renamed as well. They can't have spaces.
+        • Juice Head - 5k - Watermelon Lime - PNG should be juicehead-5k-Watermelon_lime or juice_head-5k-Watermelon_lime-png
+    • Trim the pictures if they are a png!
+    • Don't worry about saving any svgs. Turns out I'm not using them. Also, I don't need images/svgs of any text.
+• Homepage is done. He gon' learn today!
+• Starting on Featured Products page
+    • The product pictures should be resized to all be the same height after being trimmed.
+        • If saving as a jpg, add a 100px-200px height padding. Make the width match. Square images!
+    • May need to rework the mobile layout.
